@@ -43,20 +43,26 @@
 <p>REDPy runs on Python 2.7, and currently has the following major package dependencies:<br>
 <a href="http://www.numpy.org/">numpy</a> | <a href="http://www.scipy.org/">scipy</a> | <a href="http://www.matplotlib.org/">matplotlib</a> | <a href="http://www.obspy.org/">obspy</a> | <a href="http://www.pytables.org/">pytables</a> | <a href="http://pandas.pydata.org/">pandas</a> | <a href="http://bokeh.pydata.org/">bokeh</a> </p>
 
-<p>Most of these dependencies can be easily installed via <a href="https://www.continuum.io/">Anaconda</a> on the command line:<br>
-<code>&gt;&gt; conda install -c obspy obspy</code><br>
-<code>&gt;&gt; conda install pytables pandas bokeh</code></p>
+<p>Most of these dependencies can be easily installed via <a href="https://www.continuum.io/">Anaconda</a> on the command line:  </p>
 
-<p>However, due to a 'feature' in numpy 1.10.0, processing runs <em>extremely</em> slow (by at least an order of magnitude, if not two or more). Until a fix is released for this issue in numpy, we recommend downgrading numpy, scipy, matplotlib, and pytables to the following previously stable versions:<br>
-<code>&gt;&gt; conda install numpy=1.9.3 scipy=0.15.0 matplotlib=1.4.2 pytables=3.2.0 pandas=0.16.0 bokeh=0.9.3</code></p>
+<pre><code>&gt;&gt; conda install -c obspy obspy
+&gt;&gt; conda install pytables pandas bokeh
+</code></pre>
+
+<p>However, due to a 'feature' in numpy 1.10.0, processing runs <em>extremely</em> slow (by at least an order of magnitude, if not two or more). Until a fix is released for this issue in numpy, we recommend downgrading numpy, scipy, matplotlib, and pytables to the following previously stable versions:  </p>
+
+<pre><code>&gt;&gt; conda install numpy=1.9.3 scipy=0.15.0 matplotlib=1.4.2 pytables=3.2.0 pandas=0.16.0 bokeh=0.9.3
+</code></pre>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Once dependencies are installed and REDPy is downloaded, REDPy can be run out of the box with the following commands to test if the code is working on your computer:<br>
-<code>&gt;&gt; python initialize.py</code><br>
-<code>&gt;&gt; python catfill.py mshcat.csv</code><br>
-<code>&gt;&gt; python backfill.py -s 2004-09-15 -e 2004-09-24</code></p>
+<p>Once dependencies are installed and REDPy is downloaded, REDPy can be run out of the box with the following commands to test if the code is working on your computer:  </p>
+
+<pre><code>&gt;&gt; python initialize.py
+&gt;&gt; python catfill.py mshcat.csv
+&gt;&gt; python backfill.py -s 2004-09-15 -e 2004-09-24
+</code></pre>
 
 <p>Check out the Wiki for more detailed usage!</p>
       </section>
