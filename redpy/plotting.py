@@ -1316,11 +1316,20 @@ def plotSingleFamily(rtable, ftable, ctable, startTimeMPL, windowAmp, windowStar
     # Plot correlation timeline
     idf = ids[fam]
     ix = np.where(np.in1d(id2,idf))
+    #C = np.eye(len(idf))
+    #r1 = [np.where(idf==xx)[0][0] for xx in id1[ix]]
+    #r2 = [np.where(idf==xx)[0][0] for xx in id2[ix]]
+    #C[r1,r2] = ccc[ix]
+    #C[r2,r1] = ccc[ix]
+    #Cprint = C[np.argmax(np.sum(C,0)),:]
     C = np.eye(len(idf))
-    r1 = [np.where(idf==xx)[0][0] for xx in id1[ix]]
-    r2 = [np.where(idf==xx)[0][0] for xx in id2[ix]]
-    C[r1,r2] = ccc[ix]
-    C[r2,r1] = ccc[ix]
+    try:
+        r1 = [np.where(idf==xx)[0][0] for xx in id1[ix]]
+        r2 = [np.where(idf==xx)[0][0] for xx in id2[ix]]
+        C[r1,r2] = ccc[ix]
+        C[r2,r1] = ccc[ix]
+    except IndexError:
+        print('Found issue printing correlation timeline in family {}'.format(cnum))
     Cprint = C[np.argmax(np.sum(C,0)),:]
 
     ax5 = fig.add_subplot(9, 3, (22,27))
